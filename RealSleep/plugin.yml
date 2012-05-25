@@ -1,0 +1,14 @@
+name: RealSleep
+main: com.github.limdingwen.RealSleep.RealSleep
+version: 1.0
+description: RealSLeep simulates energy levels. It just works.
+author: limdingwen
+website: http://dev.bukkit.org/server-mods/realsleep
+
+commands:
+  sleep:
+    description: The base command for all RealSleep operations.
+    usage: Oops! Try /sleep help.
+    permission: RealSleep.base
+    permission-message: You cannot access any sleep commands.
+    aliases: [rs]
