@@ -52,7 +52,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 			if (args.length > 0) {
 				if (args[0].equalsIgnoreCase("check")) {
 					if (args.length > 1) {
-						Float sleep = SleepChecker.getSleep(Bukkit.getServer().getPlayer(args[1]));
+						Float sleep = SleepChecker.getSleep((CommandSender) Bukkit.getServer().getPlayer(args[1]));
 						
 						if (sleep != null) {
 							sender.sendMessage(args[1] + "'s sleep is now at: " + Float.toString(sleep) + "%");
@@ -66,7 +66,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 						}
 					}
 					else {
-						Float sleep = SleepChecker.getSleep((Player) sender);
+						Float sleep = SleepChecker.getSleep(sender);
 						
 						if (sender instanceof Player) {
 							if (sleep != null) {
@@ -88,19 +88,19 @@ public class RealSleep extends JavaPlugin implements Listener {
 					}
 				}
 				else if (args[0].equalsIgnoreCase("help")) {
-					Help.printHelp((Player) sender);
+					Help.printHelp(sender);
 					
 					return true;
 				}
 				else {
-					Help.printHelp((Player) sender);
+					Help.printHelp(sender);
 					
 					return true;
 				}
 
 			}
 			else {
-				Help.printHelp((Player) sender);
+				Help.printHelp(sender);
 				
 				return true;
 			}

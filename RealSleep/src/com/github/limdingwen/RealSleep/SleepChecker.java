@@ -4,12 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class SleepChecker {	
 	static Logger log;
 	
-	public static Float getSleep(Player player) {
+	public static Float getSleep(CommandSender sender) {
 		log = Logger.getLogger("RealSleepChecker");
 		
 		Map<String, Float> data = new HashMap<String, Float>();
@@ -22,8 +23,8 @@ public class SleepChecker {
 			return (Float) null;
 		}
 		
-		if (data.containsKey(player.getName())) {
-			return data.get(player.getName());
+		if (data.containsKey(sender.getName())) {
+			return data.get(sender.getName());
 		}
 		else return (Float) null;
 	}
