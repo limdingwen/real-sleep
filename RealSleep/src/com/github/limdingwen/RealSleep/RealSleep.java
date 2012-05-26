@@ -26,7 +26,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 		
 		// Start the decrease
 		
-		this.getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
+		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
 
 			   public void run() {
 			       SleepDecreaser.decrease();
