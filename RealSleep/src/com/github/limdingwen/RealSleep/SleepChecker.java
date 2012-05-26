@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 import org.bukkit.entity.Player;
 
 public class SleepChecker {	
-	Logger log;
+	static Logger log;
 	
-	public float getSleep(Player player) {
+	public static Float getSleep(Player player) {
 		log = Logger.getLogger("RealSleepChecker");
 		
 		Map<String, Float> data = new HashMap<String, Float>();

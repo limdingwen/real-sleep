@@ -4,7 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class Help {
-	public void printHelp(Player player) {
+	public static void printHelp(Player player) {
 		player.sendMessage(ChatColor.GREEN + "==RealSleep Help - Commands==");
 		player.sendMessage("----------------------");
 		player.sendMessage("Remember that you could replace all 'sleep' with 'rs'.");

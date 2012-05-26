@@ -18,12 +18,6 @@ public class RealSleep extends JavaPlugin implements Listener {
 	Logger log;
 	public Map<String, Float> data = new HashMap<String, Float>();
 	
-	SleepDecreaser decreaser;
-	SleepChecker checker;
-	SleepEffect effect;
-	SleepRefresher refresher;
-	Help help;
-	
 	public void onEnable() {
 		log = this.getLogger();
 		
@@ -58,7 +52,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 			if (args.length > 0) {
 				if (args[0].equalsIgnoreCase("check")) {
 					if (args.length > 1) {
-						Float sleep = checker.getSleep(Bukkit.getServer().getPlayer(args[1]));
+						Float sleep = SleepChecker.getSleep(Bukkit.getServer().getPlayer(args[1]));
 						
 						if (sleep != null) {
 							sender.sendMessage(args[1] + "'s sleep is now at: " + Float.toString(sleep) + "%");
@@ -72,7 +66,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 						}
 					}
 					else {
-						Float sleep = checker.getSleep((Player) sender);
+						Float sleep = SleepChecker.getSleep((Player) sender);
 						
 						if (sender instanceof Player) {
 							if (sleep != null) {
@@ -84,7 +78,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 								sender.sendMessage(ChatColor.RED + "For some reason we cannot find your sleep. Contact the admin.");
 								
 								return true;
-							}							
+							}
 						}
 						else {
 							sender.sendMessage(ChatColor.RED + "Sorry, you can only use /sleep check <Player> in the console.");
@@ -94,19 +88,19 @@ public class RealSleep extends JavaPlugin implements Listener {
 					}
 				}
 				else if (args[0].equalsIgnoreCase("help")) {
-					help.printHelp((Player) sender);
+					Help.printHelp((Player) sender);
 					
 					return true;
 				}
 				else {
-					help.printHelp((Player) sender);
+					Help.printHelp((Player) sender);
 					
 					return true;
 				}
 
 			}
 			else {
-				help.printHelp((Player) sender);
+				Help.printHelp((Player) sender);
 				
 				return true;
 			}
