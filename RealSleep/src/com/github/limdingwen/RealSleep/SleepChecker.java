@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class SleepChecker {	
 	static Logger log;
