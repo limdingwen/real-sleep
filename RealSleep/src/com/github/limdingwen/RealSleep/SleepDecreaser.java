@@ -26,7 +26,10 @@ public class SleepDecreaser {
 		for (int i = 0; i < players.length; i++) {
 			if (!players[i].hasPermission("RealSleep.false")) {
 				if (data.containsKey(players[i].getName())) {
-					
+					Float tempSleep = data.get(players[i].getName());
+					tempSleep -= 1;
+					if (tempSleep < 0) tempSleep = 0.0f;
+					data.put(players[i].getName(), tempSleep);
 				}
 				else {
 					log.warning("Could not decrease " + players[i].getName() + "'s sleep! Reason: Could not find personal sleep. Try reconnecting.");
