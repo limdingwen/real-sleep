@@ -59,6 +59,8 @@ public class RealSleep extends JavaPlugin implements Listener {
 						}
 						else {
 							sender.sendMessage(ChatColor.RED + "Cannot find " + args[1] + "! No check.");
+							
+							return true;
 						}
 						
 						if (sleep != null) {
