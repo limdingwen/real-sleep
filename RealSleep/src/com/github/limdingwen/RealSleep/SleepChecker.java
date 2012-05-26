@@ -20,12 +20,12 @@ public class SleepChecker {
 		} catch (Exception e) {
 			log.warning("Cannot find RealSleepData! Data not checked. Reload to resolve.");
 			
-			return (Float) null;
+			return null;
 		}
 		
 		if (data.containsKey(sender.getName())) {
 			return data.get(sender.getName());
 		}
-		else return (Float) null;
+		else return null;
 	}
 }
