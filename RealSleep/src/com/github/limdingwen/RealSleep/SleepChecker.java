@@ -17,7 +17,7 @@ public class SleepChecker {
 		try {
 			data = (Map) SLAPI.load("RealSleepData");
 		} catch (Exception e) {
-			log.warning("Cannot find RealSleepData! Data not checked. Reload to resolve.");
+			log.warning("Cannot get sleep!");
 			
 			return null;
 		}

@@ -24,6 +24,15 @@ public class RealSleep extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(this, this);
 		checkStartupFile();
 		
+		// Start the decrease
+		
+		this.getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
+
+			   public void run() {
+			       SleepDecreaser.decrease();
+			   }
+			}, 100L, 100L);
+		
 		log.info("RealSleep ready to get you sleepy!");
 	}
 	
@@ -31,14 +40,14 @@ public class RealSleep extends JavaPlugin implements Listener {
 		try {
 			SLAPI.load("RealSleepData");
 		} catch (Exception e) {
-			log.warning("RealSleepData not found, creating.");
+			log.warning("Check failed for RealSleepData. Reason: Cannot find file. Creating.");
 			
 			Map<String, Float> data = new HashMap<String, Float>();
 			
 			try {
 				SLAPI.save(data, "RealSleepData");
 			} catch (Exception e1) {
-				log.warning("Cannot create file! Plugin may experience glitches. Please report.");
+				log.warning("Create failed for RealSleepData. Reason: cannot save file. Try reloading.");
 			}
 		}
 	}
