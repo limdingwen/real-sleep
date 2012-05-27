@@ -11,4 +11,4 @@ commands:
     usage: Oops! Try /sleep help.
     permission: RealSleep.base
     permission-message: You cannot access any sleep commands.
-    aliases: [rs]
+    aliases: [rs,realsleep]
