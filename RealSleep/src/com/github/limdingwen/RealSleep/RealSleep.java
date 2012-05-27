@@ -64,7 +64,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 						Float sleep = (float) 0.0;
 						Player tester = Bukkit.getServer().getPlayer(args[1]);
 						if (tester != null) {
-							sleep = SleepChecker.getSleep(tester);
+							sleep = SleepChecker.getSleep((CommandSender) tester);
 						}
 						else {
 							sender.sendMessage(ChatColor.RED + "Cannot find " + args[1] + "! No check.");

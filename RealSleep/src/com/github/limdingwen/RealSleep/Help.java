@@ -7,8 +7,7 @@ import org.bukkit.entity.Player;
 public class Help {
 	public static void printHelp(CommandSender sender) {
 		sender.sendMessage(ChatColor.GREEN + "=====" + ChatColor.RESET + "RealSleep Help - Commands" + ChatColor.GREEN + "=====");
-		sender.sendMessage("----------------------");
-		sender.sendMessage(ChatColor.BOLD + "Remember that you could replace all 'sleep' with 'rs' or 'realsleep'.");
+		sender.sendMessage(ChatColor.ITALIC + "Remember that you could replace all 'sleep' with 'rs' or 'realsleep'.");
 		sender.sendMessage("----------------------");
 		sender.sendMessage(ChatColor.GOLD + "/sleep" + ChatColor.RESET + " - Base of all commands.");
 		sender.sendMessage(ChatColor.GOLD + "/sleep help" + ChatColor.RESET + " - Displays this help screen.");
