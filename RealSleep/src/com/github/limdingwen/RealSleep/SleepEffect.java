@@ -30,7 +30,7 @@ public class SleepEffect {
 		for (int i = 0; i < players.length; i++) {
 			if (data.containsKey(players[i].getName())) {
 				if (data.get(players[i].getName()) < 20) {
-					players[i].addPotionEffects((Collection<PotionEffect>) PotionEffectType.CONFUSION);
+					players[i].addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 999999, 1) );
 					
 					return true;
 				}
