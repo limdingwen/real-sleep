@@ -13,10 +13,6 @@ public class SleepDecreaser {
 		Map<String, Float> data = new HashMap<String, Float>();
 		Logger log = Logger.getLogger("RealSleepDecreaser");
 		
-		// Debug: Remove!
-		
-		log.info("Not fucked up.");
-		
 		// Load data
 		
 		try {
