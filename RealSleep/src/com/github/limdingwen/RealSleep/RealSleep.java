@@ -102,6 +102,23 @@ public class RealSleep extends JavaPlugin implements Listener {
 					
 					return true;
 				}
+				else if (args[0].equalsIgnoreCase("restore")) {
+					if (args.length > 1) {
+						if (SleepRefresher.regain(args[1])) {
+							sender.sendMessage(ChatColor.GREEN + "Successfully regained " + args[1] + "'s sleep!");
+							
+							return true;
+						}
+						else {
+							sender.sendMessage(ChatColor.RED + "Could not regain sleep due to an internal error.");
+						}
+					}
+					else {
+						sender.sendMessage(ChatColor.RED + "Wrong usage:  Do /sleep restore <Player> instead.");
+						
+						return true;
+					}
+				}
 				else {
 					Help.printHelp(sender);
 					
