@@ -12,3 +12,6 @@ commands:
     permission: RealSleep.base
     permission-message: You cannot access any sleep commands.
     aliases: [rs,realsleep]
+permissions:
+  RealSleep.false:
+    default: false
