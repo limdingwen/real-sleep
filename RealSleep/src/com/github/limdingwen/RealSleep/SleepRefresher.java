@@ -40,7 +40,9 @@ public class SleepRefresher {
 			
 			return false;
 		}
-				
+		
+		SleepEffect.refreshEffects();
+		
 		return true;
 	}
 }

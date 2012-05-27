@@ -19,6 +19,8 @@ public class SleepDecreaser {
 			data = (Map) SLAPI.load("RealSleepData");
 		} catch (Exception e) {
 			log.warning("Could not decrease sleep! Reason: Could not load file. Try reloading.");
+			
+			return;
 		}
 		
 		// Go through every single player
@@ -32,7 +34,7 @@ public class SleepDecreaser {
 					data.put(players[i].getName(), tempSleep);
 				}
 				else {
-					log.warning("Could not decrease " + players[i].getName() + "'s sleep! Reason: Could not find personal sleep. Try reconnecting.");
+					log.warning("Could not decrease " + players[i].getName() + "'s sleep! Reason: Could not find personal sleep. Try reconnecting.");					
 				}
 			}
 		}
@@ -44,6 +46,10 @@ public class SleepDecreaser {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			log.warning("Could not save RealSleepData. Reason: Failed to save file. Try reloading.");
+			
+			return;
 		}
+		
+		SleepEffect.refreshEffects();
 	}
 }

@@ -33,6 +33,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 			   }
 			}, 100L, 100L);
 		
+		SleepEffect.refreshEffects();
 		log.info("RealSleep ready to get you sleepy!");
 	}
 	
@@ -159,5 +160,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 				e.printStackTrace();
 			}
 		}
+		
+		SleepEffect.refreshEffects();
 	}
 }
