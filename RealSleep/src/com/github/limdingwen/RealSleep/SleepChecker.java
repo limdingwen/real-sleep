@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 public class SleepChecker {	
 	static Logger log;
 	
-	public static Float getSleep(CommandSender sender) {
+	public static Float getSleep(String sender) {
 		log = Logger.getLogger("RealSleepChecker");
 		
 		Map<String, Float> data = new HashMap<String, Float>();
@@ -22,8 +22,8 @@ public class SleepChecker {
 			return null;
 		}
 		
-		if (data.containsKey(sender.getName())) {
-			return data.get(sender.getName());
+		if (data.containsKey(sender)) {
+			return data.get(sender);
 		}
 		else return null;
 	}
