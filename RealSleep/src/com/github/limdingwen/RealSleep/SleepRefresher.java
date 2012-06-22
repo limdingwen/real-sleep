@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 public class SleepRefresher {
 	static Logger log;
 	
-	public static boolean regain(String name) {
+	public static boolean regain(String name, Float amount) {
 		log = Logger.getLogger("RealSleepRefresher");
 		Map<String, Float> data = new HashMap<String, Float>();
 		
@@ -22,9 +22,15 @@ public class SleepRefresher {
 		}
 		
 		if (data.containsKey(name)) {
-			Float tempSleep = data.get(name);
-			tempSleep = 100.0f;
-			data.put(name, tempSleep);
+			Float tempSleepAdd = 0f;
+			if (amount < 0) tempSleepAdd = 100.0f - data.get(name);
+			else tempSleepAdd = amount;
+			
+			if (data.get(name) + tempSleepAdd > 100.0f) {
+				tempSleepAdd = 100.0f - data.get(name);
+			}
+			
+			data.put(name, data.get(name) + tempSleepAdd);
 		}
 		else {
 			log.warning("Cannot regain sleep! Reason: Cannot find personal data to edit.");

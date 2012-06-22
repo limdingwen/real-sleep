@@ -17,6 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class RealSleep extends JavaPlugin implements Listener {
 	Logger log;
 	public Map<String, Float> data = new HashMap<String, Float>();
+	public Map<String, Long> timeSlept = new HashMap<String, Long>();
 	
 	public void onEnable() {
 		log = this.getLogger();
@@ -105,7 +106,7 @@ public class RealSleep extends JavaPlugin implements Listener {
 				}
 				else if (args[0].equalsIgnoreCase("restore")) {
 					if (args.length > 1) {
-						if (SleepRefresher.regain(args[1])) {
+						if (SleepRefresher.regain(args[1], -1f)) {
 							sender.sendMessage(ChatColor.GREEN + "Successfully regained " + args[1] + "'s sleep!");
 							
 							return true;
@@ -162,5 +163,5 @@ public class RealSleep extends JavaPlugin implements Listener {
 		}
 		
 		SleepEffect.refreshEffects();
-	}
+	}	
 }
