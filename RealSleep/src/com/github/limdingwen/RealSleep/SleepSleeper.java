@@ -14,10 +14,10 @@ public class SleepSleeper {
 	
 	public void playerBedEnterEvent(Player who, Block bed) {
 		try {
-			timeSlept = (Map<String, Long>) SLAPI.load("RealSleepData");
+			timeSlept = (Map<String, Long>) SLAPI.load("SleepTempData");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			log.warning("Could not load RealSleepData! Cannot log bed enter.");
+			log.warning("Could not load SleepTempData! Cannot log bed enter.");
 			
 			return;
 		}
@@ -25,16 +25,16 @@ public class SleepSleeper {
 		timeSlept.put(who.getName(), who.getWorld().getFullTime());
 		
 		try {
-			SLAPI.save(timeSlept, "RealSleepData");
+			SLAPI.save(timeSlept, "SleepTempData");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			log.warning("Could not find RealSleepData! Unable to save bed enter.");
+			log.warning("Could not find SleepTempData! Unable to save bed enter.");
 		}
 	}
 	
 	public void playerBedLeaveEvent(Player who, Block bed) {
 		try {
-			timeSlept = (Map<String, Long>) SLAPI.load("RealSleepData");
+			timeSlept = (Map<String, Long>) SLAPI.load("SleepTempData");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			log.warning("Could not load RealSleepData! Cannot apply effect to bed leave.");
@@ -43,7 +43,7 @@ public class SleepSleeper {
 		}
 		
 		if (timeSlept.containsKey(who.getName())) {
-			log.warning("RealSleepData's player cannot be found! May be because of sleeping malfunctioning.");
+			log.warning("SleepTempData's player cannot be found! May be because of sleeping malfunctioning.");
 			
 			return;
 		}
